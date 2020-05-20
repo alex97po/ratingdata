@@ -18,7 +18,9 @@ public class RatingDataResource {
     }
 
     @GetMapping("/users/{userId}")
-    public List<Rating> getUserRating(@PathVariable String userId) {
-        return List.of(new Rating("1234", 4), new Rating("5678", 3));
+    public RatingVM getUserRating(@PathVariable String userId) {
+        RatingVM ratingVM = new RatingVM();
+        ratingVM.setRatings(List.of(new Rating("1234", 4), new Rating("5678", 3)));
+        return ratingVM;
     }
 }
