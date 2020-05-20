@@ -16,4 +16,9 @@ public class RatingDataResource {
     public Rating getRatingForMovie(@PathVariable String movieId) {
         return new Rating(movieId, 4);
     }
+
+    @GetMapping("/users/{userId}")
+    public List<Rating> getUserRating(@PathVariable String userId) {
+        return List.of(new Rating("1234", 4), new Rating("5678", 3));
+    }
 }
